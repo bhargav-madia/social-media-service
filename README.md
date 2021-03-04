@@ -1,4 +1,4 @@
-# social-media
+# social-media-service
 
 To start the service , run Server.java file.
 The main class contains sysouts and Thread.sleep for testing point of view.
