@@ -1,14 +1,13 @@
-package com.cs.social_media.service;
+package com.cs.socialmedia.service;
 
-import com.cs.social_media.exception.ResourceNotFoundException;
-import com.cs.social_media.persistence.model.Post;
-import com.cs.social_media.persistence.model.User;
-import com.cs.social_media.persistence.repository.PostRepository;
-import com.cs.social_media.persistence.repository.UserRepository;
+import com.cs.socialmedia.exception.ResourceNotFoundException;
+import com.cs.socialmedia.persistence.model.Post;
+import com.cs.socialmedia.persistence.model.User;
+import com.cs.socialmedia.persistence.repository.PostRepository;
+import com.cs.socialmedia.persistence.repository.UserRepository;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class PostService {
 

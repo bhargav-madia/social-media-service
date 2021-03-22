@@ -1,17 +1,15 @@
-package com.cs.social_media.service;
+package com.cs.socialmedia.service;
 
-import com.cs.social_media.persistence.model.User;
-import com.cs.social_media.persistence.repository.UserRepositoryImpl;
+import com.cs.socialmedia.exception.ResourceNotFoundException;
+import com.cs.socialmedia.persistence.model.User;
+import com.cs.socialmedia.persistence.repository.UserRepositoryImpl;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.List;
 import java.util.Set;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.InstanceOfAssertFactories.LIST;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class UserServiceTest {
 
@@ -32,20 +30,21 @@ public class UserServiceTest {
     }
 
     @Test
-    public void canFollowUser() {
-        unit.follow(1L,2L);
-
-        User user = userRepository.getUserById(1L).get();
+    public void shouldFollowUser() {
+        User user = unit.follow(1L,2L);
         assertThat(user.getFollowees()).isEqualTo(Set.of(2L));
     }
 
     @Test
-    public void canUnfollowUser() {
-        unit.unfollow(1L,2L);
-
-        User user = userRepository.getUserById(1L).get();
+    public void shouldUnfollowUser() {
+        User user = unit.unfollow(1L,2L);
         assertThat(user.getFollowees()).isNotEqualTo(Set.of(2L));
+    }
 
-
+    @Test
+    public void shouldThrow404Exception() {
+        assertThatThrownBy(() -> unit.unfollow(5L,5L))
+                .isInstanceOf(ResourceNotFoundException.class)
+                .hasMessage("No user found");
     }
 }

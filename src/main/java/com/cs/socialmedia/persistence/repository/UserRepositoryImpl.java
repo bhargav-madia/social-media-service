@@ -1,6 +1,6 @@
-package com.cs.social_media.persistence.repository;
+package com.cs.socialmedia.persistence.repository;
 
-import com.cs.social_media.persistence.model.User;
+import com.cs.socialmedia.persistence.model.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;

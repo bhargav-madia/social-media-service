@@ -1,10 +1,10 @@
-package com.cs.social_media;
+package com.cs.socialmedia;
 
-import com.cs.social_media.persistence.model.User;
-import com.cs.social_media.persistence.repository.PostRepository;
-import com.cs.social_media.persistence.repository.UserRepository;
-import com.cs.social_media.service.PostService;
-import com.cs.social_media.service.UserService;
+import com.cs.socialmedia.persistence.model.User;
+import com.cs.socialmedia.persistence.repository.PostRepository;
+import com.cs.socialmedia.persistence.repository.UserRepository;
+import com.cs.socialmedia.service.PostService;
+import com.cs.socialmedia.service.UserService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -13,7 +13,7 @@ import org.springframework.context.annotation.ComponentScan;
 import java.util.List;
 
 @SpringBootApplication
-@ComponentScan("com.cs.social_media")
+@ComponentScan("com.cs.socialmedia")
 public class Server {
 
     private static UserService userService;
@@ -43,10 +43,6 @@ public class Server {
 
         Thread.sleep(2000);
         postService.createPost(user3.getId(),"klmn");
-
-        System.out.println("All users...: "+userService.getAllUsers());
-
-        System.out.println("All Posts....: "+postService.getAllPosts());
 
         List<String> requiredNewsFeed = postService.getNewsFeed(user1.getId());
 

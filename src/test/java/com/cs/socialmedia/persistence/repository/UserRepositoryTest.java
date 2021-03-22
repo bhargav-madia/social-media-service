@@ -1,10 +1,7 @@
-package com.cs.social_media.persistence.repository;
+package com.cs.socialmedia.persistence.repository;
 
-import com.cs.social_media.persistence.model.User;
+import com.cs.socialmedia.persistence.model.User;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

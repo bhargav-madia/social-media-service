@@ -1,4 +1,4 @@
-package com.cs.social_media.exception;
+package com.cs.socialmedia.exception;
 
 public class ResourceNotFoundException extends RuntimeException {
     public ResourceNotFoundException(String message) {

@@ -1,4 +1,4 @@
-package com.cs.social_media.persistence.model;
+package com.cs.socialmedia.persistence.model;
 
 import java.util.*;
 

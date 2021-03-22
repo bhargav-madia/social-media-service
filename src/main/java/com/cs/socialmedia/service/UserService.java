@@ -1,8 +1,8 @@
-package com.cs.social_media.service;
+package com.cs.socialmedia.service;
 
-import com.cs.social_media.exception.ResourceNotFoundException;
-import com.cs.social_media.persistence.model.User;
-import com.cs.social_media.persistence.repository.UserRepository;
+import com.cs.socialmedia.exception.ResourceNotFoundException;
+import com.cs.socialmedia.persistence.model.User;
+import com.cs.socialmedia.persistence.repository.UserRepository;
 
 import java.util.List;
 import java.util.Map;

@@ -7,4 +7,4 @@ The module contains the service calls as required for User and Post entity.
 
 Repository contains hashMap as a place for in-memory database.
 
-The package com.cs.social_media.web can be updated to contain the controller logic.
+The package com.cs.socialmedia.web can be updated to contain the controller logic.

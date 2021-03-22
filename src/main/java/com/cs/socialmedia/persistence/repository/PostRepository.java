@@ -1,7 +1,6 @@
-package com.cs.social_media.persistence.repository;
+package com.cs.socialmedia.persistence.repository;
 
-import com.cs.social_media.persistence.model.Post;
-import com.cs.social_media.persistence.model.User;
+import com.cs.socialmedia.persistence.model.Post;
 
 import java.util.Map;
 import java.util.Optional;
