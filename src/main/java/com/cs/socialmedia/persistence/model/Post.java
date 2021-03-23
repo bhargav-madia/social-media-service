@@ -2,7 +2,7 @@ package com.cs.socialmedia.persistence.model;
 
 import java.time.LocalDateTime;
 
-public class Post {
+public class Post implements Comparable<Post> {
 
     private Long id;
     private Long userId;
@@ -56,5 +56,17 @@ public class Post {
                 ", content='" + content + '\'' +
                 ", postTime=" + postTime +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Post o) {
+        //sorting by latest
+        if(this.getPostTime().isAfter(o.postTime))
+            return -1;
+        else if(this.getPostTime().isBefore(o.postTime))
+            return 1;
+        else {
+            return (int) (this.getId()-o.getId());
+        }
     }
 }

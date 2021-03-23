@@ -1,13 +1,17 @@
 package com.cs.socialmedia.service;
 
+import com.cs.socialmedia.exception.ResourceNotFoundException;
+import com.cs.socialmedia.persistence.model.User;
 import com.cs.socialmedia.persistence.repository.PostRepositoryImpl;
 import com.cs.socialmedia.persistence.repository.UserRepositoryImpl;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class PostServiceTest {
 
@@ -76,6 +80,19 @@ public class PostServiceTest {
         assertThat(newsFeedVisible.get(1)).isEqualTo("Post10 of Bhargav here..");
 
         assertThat(newsFeedVisible.size()).isEqualTo(20);
+    }
+
+    @Test
+    public void shouldAddPostToUser() {
+        Optional<User> user = userRepository.getUserById(1L);
+        assertThat(user.get().getPostIds()).contains(1L);
+    }
+
+    @Test
+    public void shouldThrow404Exception() {
+        assertThatThrownBy(() -> postServiceUnit.addPostToUser(5L,5L))
+                .isInstanceOf(ResourceNotFoundException.class)
+                .hasMessage("No user found");
     }
 
 }

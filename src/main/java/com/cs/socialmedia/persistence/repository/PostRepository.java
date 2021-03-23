@@ -4,10 +4,11 @@ import com.cs.socialmedia.persistence.model.Post;
 
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 
 public interface PostRepository {
 
-    Map<Long, Post> getAllPosts();
+    Set<Post> getAllPosts();
     void createOrUpdatePost(Post post);
     Optional<Post> getPostById(Long postId);
 }
